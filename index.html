@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Vector map demo</title>
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js"></script>
+	<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css" rel="stylesheet"/>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		#map {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+
+<div id="map"></div>
+<script>
+	var style = {
+		"version": 8,
+		"name": "Vector Tiles Test",
+		"sources": {
+			"local": {
+				"type": "vector",
+				"tiles": [
+					"http://%HOST%/?type=base&x={x}&y={y}&zoom={z}"
+				]
+			}
+		},
+		"layers": [
+			{
+				"id": "test-lines",
+				"type": "line",
+				"source": "local",
+				"source-layer": "test",
+				"paint": {
+					"line-color": "red",
+					"line-width": {
+						"base": 1,
+						"stops": [
+							[
+								6,
+								0.25
+							],
+							[
+								20,
+								6
+							]
+						]
+					}
+				}
+			}
+		]
+	};
+
+	var map = new mapboxgl.Map({
+		container: 'map',
+		style: style,
+		zoom: 20,
+		center: [-74.091239, 40.713739]
+		//pitch: 60,
+		//bearing: -60
+	});
+</script>
+
+</body>
+</html>

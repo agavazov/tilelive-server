@@ -1,0 +1,12 @@
+{
+	"name": "VectorServer",
+	"description": "Novanor vector tiles server",
+	"license": "CDDL-1.1",
+	"private": true,
+	"version": "0.0.1",
+	"dependencies": {
+		"tilelive": "*",
+		"tilelive-bridge": "*",
+		"protocol-buffers": "*"
+	}
+}
