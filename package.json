@@ -1,12 +1,24 @@
 {
-	"name": "VectorServer",
-	"description": "Novanor vector tiles server",
-	"license": "CDDL-1.1",
-	"private": true,
-	"version": "0.0.1",
-	"dependencies": {
-		"tilelive": "*",
-		"tilelive-bridge": "*",
-		"protocol-buffers": "*"
-	}
+  "name": "vector-map-server",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Vector tiles server",
+  "keywords": [
+    "mapbox",
+    "mapnik",
+    "tile",
+    "protobuf",
+    "vector"
+  ],
+  "author": {
+    "name": "Alexander Gavazov",
+    "url": "http://www.atlantify.com",
+    "email": "alex@atlantify.com"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "tilelive": "^5.12.3",
+    "tilelive-bridge": "^2.3.1",
+    "protocol-buffers": "^4.1.0"
+  }
 }
